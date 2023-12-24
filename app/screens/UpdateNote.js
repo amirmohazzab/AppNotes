@@ -1,6 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react'
 import {View, Text, TextInput, TouchableOpacity} from 'react-native'
 import { NoteContext } from '../context/NoteContext';
+import { strings } from '../locale/i18n';
 
 
 const UpdateNote = ({navigation, route}) => {
@@ -36,32 +37,33 @@ const UpdateNote = ({navigation, route}) => {
     return ( 
         <View style={{flex: 1, backgroundColor: 'black'}}>
             <View style={{backgroundColor: 'blue', height: 60, alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={{color: "#fff", fontSize: 20}}> Create note </Text>
+                <Text style={{color: "#fff", fontSize: 20}}> {strings("updateHeaderTitle")} </Text>
             </View>
             <View style={{flex: 1, padding: 20}}>
-                <Text> Title: </Text>
+                <Text> {strings("titleInput")} : </Text>
                 <TextInput 
                     value={note.title} 
                     onChangeText={title => setNote({title, content: note.content})} 
-                    style={{borderBottomWidth: 1, borderColor: 'grey'}}
+                    style={{borderBottomWidth: 1, borderColor: 'grey', marginBottom: 10}}
                 />
+
+                <Text> {strings("contentInput")} : </Text>
                 <TextInput 
                     multiline
                     value={note.content}
                     onChangeText={content => setNote({title: note.title, content})}
-                    placeholder="Main Content"
                     placeholderTextColor="grey"
                 />
             </View>
             <View style={{backgroundColor: 'blue', height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
                 <TouchableOpacity activeOpacity={1} onPress={UpdateNote}>
-                    <Text style={{color: "#fff", fontSize: 20}}> Edit </Text>
+                    <Text style={{color: "#fff", fontSize: 20}}> {strings("editNote_btn")} </Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={1} onPress={DeleteNote}>
-                    <Text style={{color: "#fff", fontSize: 20}}> Delete </Text>
+                    <Text style={{color: "#fff", fontSize: 20}}> {strings("deleteNote_btn")} </Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Home')}>
-                    <Text style={{color: "#fff", fontSize: 20}}> Cancel </Text>
+                    <Text style={{color: "#fff", fontSize: 20}}> {strings("cancel_btn")} </Text>
                 </TouchableOpacity>
             </View>
         </View>

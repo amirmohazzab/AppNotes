@@ -1,0 +1,12 @@
+{
+  "mainHeaderTitle": "meine Notizen",
+  "addNote_btn": "Notiz hinzufügen",
+  "addHeaderTitle": "Notiz erstellen",
+  "updateHeaderTitle": "Notiz bearbeiten",
+  "titleInput": "Titel",
+  "contentInput": "Inhalt",
+  "saveNote_btn": "Speichern",
+  "cancel_btn": "Stornieren",
+  "editNote_btn": "Bearbeiten",
+  "deleteNote_btn": "Löschen"
+}

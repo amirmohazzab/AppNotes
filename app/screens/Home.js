@@ -3,6 +3,7 @@ import {Text, FlatList, TouchableOpacity, StyleSheet, View} from 'react-native'
 import NoteContent from '../components/NoteContent';
 import { NoteContext } from '../context/NoteContext';
 import { useFocusEffect } from '@react-navigation/native'
+import { strings } from '../locale/i18n';
 
 
 const Home = ({navigation}) => {
@@ -20,7 +21,7 @@ const Home = ({navigation}) => {
     return ( 
         <View style={{flex: 1, backgroundColor: 'black'}}>
             <View style={{backgroundColor: 'blue', height: 60, alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={{color: "#fff", fontSize: 20}}> My Notes </Text>
+                <Text style={{color: "#fff", fontSize: 20}}> {strings("mainHeaderTitle")} </Text>
             </View>
             <View style={{flex: 1, padding: 20}}>
                 <FlatList 
@@ -38,7 +39,7 @@ const Home = ({navigation}) => {
             </View>
             <View style={{backgroundColor: 'blue', height: 60, alignItems: 'center', justifyContent: 'center'}}>
                 <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Add')} style={{}}>
-                    <Text style={{color: "#fff", fontSize: 20}}> Add new Note </Text>
+                    <Text style={{color: "#fff", fontSize: 20}}> {strings("addNote_btn")} </Text>
                 </TouchableOpacity>
             </View>
         </View>
